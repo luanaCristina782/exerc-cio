@@ -1,0 +1,175 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+  --bg: #ffffff;
+  --text: #2c2c2e;
+  --card: #e0e0e0;
+  --primary: #6c63ff;
+  --footer: #070707;
+}
+
+
+body.dark-theme {
+  --bg: #070707;
+  --text: #e0e0e0;
+  --card: #2c2c2e;
+  --footer: #000000;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary);
+  border: none;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+
+.img1 {
+  background: url("imagens/pexels-bertellifotografia-3321797.jpg") center/cover no-repeat;
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  color: #ffffff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.cor {
+  color: #ffffff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.speakers-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.speaker-card {
+  background-color: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.speaker-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+
+.schedule {
+  background-color: var(--card);
+}
+
+.schedule-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.schedule-item {
+  background-color: var(--bg);
+  padding: 20px;
+  border-left: 6px solid var(--primary);
+}
+
+
+.newsletter-grid {
+  display: grid;
+  gap: 32px;
+}
+
+
+.footer {
+  background-color: var(--footer);
+  color: #ffffff;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+
+@media (min-width: 768px) {
+  .speakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .speakers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
